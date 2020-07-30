@@ -43,7 +43,7 @@ class FilerFile(CMSPlugin):
     link_attributes = AttributesField(excluded_keys=EXCLUDED_KEYS, blank=True,
                                       help_text=_('Optional. Adds HTML attributes to the rendered link.'))
     cmsplugin_ptr = models.OneToOneField(
-        to=CMSPlugin,
+        to=CMSPlugin, on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
     )
